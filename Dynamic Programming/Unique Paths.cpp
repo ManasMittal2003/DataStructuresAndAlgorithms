@@ -9,10 +9,10 @@ int solve(int row,int col,int m,int n,vector<vector<int>> &dp){
 	int right=0;
 	int down=0;
 	if(col+1<n){
-		right=right+solve(row,col+1,m,n,dp);
+		right=solve(row,col+1,m,n,dp);
 	}
 	if(row+1<m){
-		down=down+solve(row+1,col,m,n,dp);
+		down=solve(row+1,col,m,n,dp);
 	}
 	return dp[row][col]=right+down;
 }
